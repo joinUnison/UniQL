@@ -1,2 +1,6 @@
 # code editors
 .idea
+
+# build
+build/*
+!build/.gitkeep
