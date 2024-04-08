@@ -7,25 +7,25 @@ import (
 )
 
 type Client struct {
-	mongo *mongo.Client
+	Mongo *mongo.Client
 }
 
 type MongoConfig struct {
-	uri string
+	URI string
 }
 
 type ClientConfig struct {
-	mongo MongoConfig
+	Mongo MongoConfig
 }
 
 func NewClient(config ClientConfig) *Client {
-	clientOptions := options.Client().ApplyURI(config.mongo.uri)
+	clientOptions := options.Client().ApplyURI(config.Mongo.URI)
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
 		return nil
 	}
 
 	return &Client{
-		mongo: client,
+		Mongo: client,
 	}
 }

@@ -14,8 +14,8 @@ func TestNewClient_Mongo_ConnectError(t *testing.T) {
 
 func TestNewClient_Mongo_Success(t *testing.T) {
 	config := ClientConfig{
-		mongo: MongoConfig{
-			uri: "mongodb://user:pass@sample.host:27017",
+		Mongo: MongoConfig{
+			URI: "mongodb://user:pass@sample.host:27017",
 		},
 	}
 
@@ -25,7 +25,7 @@ func TestNewClient_Mongo_Success(t *testing.T) {
 		t.Fatal("NewClient returned nil, expected a database client instance")
 	}
 
-	if client.mongo == nil {
+	if client.Mongo == nil {
 		t.Fatal("client.mongo is nil, expected a mongo.Client instance")
 	}
 }
