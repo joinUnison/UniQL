@@ -6,17 +6,17 @@ import (
 )
 
 type Server struct {
-	gqlgen *handler.Server
+	Gqlgen *handler.Server
 }
 
 type ServerConfig struct {
-	gqlgen graphql.ExecutableSchema
+	Gqlgen graphql.ExecutableSchema
 }
 
 func NewServer(config ServerConfig) *Server {
-	server := handler.NewDefaultServer(config.gqlgen)
+	server := handler.NewDefaultServer(config.Gqlgen)
 
 	return &Server{
-		gqlgen: server,
+		Gqlgen: server,
 	}
 }

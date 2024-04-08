@@ -29,7 +29,7 @@ func TestNewServer_Gqlgen_Success(t *testing.T) {
 	schema := &MockExecutableSchema{}
 
 	config := ServerConfig{
-		gqlgen: schema,
+		Gqlgen: schema,
 	}
 
 	server := NewServer(config)
@@ -38,7 +38,7 @@ func TestNewServer_Gqlgen_Success(t *testing.T) {
 		t.Fatal("NewServer returned nil, expected a server instance")
 	}
 
-	if server.gqlgen == nil {
+	if server.Gqlgen == nil {
 		t.Fatal("server.gqlgen is nil, expected a handler.Server instance")
 	}
 }
